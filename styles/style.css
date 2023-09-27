@@ -1,0 +1,62 @@
+body {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2em;
+    font-size: 2em;
+    text-align: center;
+  }
+
+  main{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(2,auto);
+  }
+
+/*LOG IN FORM*/  
+#Login-section{
+    grid-column: 1/1;
+    grid-row: 1/2;
+    border: 3px dashed black;
+    height: auto;
+    padding: 1em;
+    margin-bottom: 2em;
+    
+}
+#login-table{
+    margin-left: auto;
+    margin-right: auto;
+
+}
+#Login-section table, th, td {
+    border: 1px  black;
+    border-collapse: collapse;
+    padding-bottom: 0.5em;
+  }
+
+#Login-section table .logintag{
+    text-align: left;
+}
+#Login-section table .loginfield{
+    padding-left: 0.5em;
+}
+
+#Login-section .loginfield input{
+    font-size: 1em;
+}
+#Login-section button{
+    font-size: 0.8em;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+
+/*PATIENT DATA*/
+#PatientData-section{
+    display: grid;
+    grid-column: 1/1;
+    grid-row: 2/2;
+    border: 3px dashed black;
+    height: 10em;
+}

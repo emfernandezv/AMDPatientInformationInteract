@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Eduardo Fernandez">
+    <meta name="contenct" content="Software Integration using JavaScript and AdvancedMD API's">
+    <title>AdvancedMD JS Integration</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <main id="content">
+        <div id="Login-section">
+            <table id="login-table">
+                <thead>
+                    <tr>
+                        <th colspan="2">
+                            Credentials
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="logintag">User</td>
+                        <td class="loginfield">
+                            <input id="username" type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="logintag">Password</td>
+                        <td class="loginfield" >
+                            <input id="password" type="password">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="logintag">Officekey</td>
+                        <td class="loginfield" >
+                            <input id="officekey" type="number" maxlength ="6"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="loginAction" class="button">Log In</button>
+        </div>
+
+        <div id="PatientData-section">
+
+        </div>
+    </main>
+    <footer id="footer-content">
+
+    </footer>
+    <script src="scripts/xml2json.js" ></script>
+    <script src="scripts/AMDLogIn.js" ></script>
+</body>
+</html>
