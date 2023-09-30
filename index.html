@@ -44,7 +44,32 @@
         </div>
 
         <div id="PatientData-section">
-
+            <table id="demographics-table">
+                <thead>
+                    <tr>Patient Search</tr>
+                    <td>Search:</td>
+                    <td><input id="searchField" type="text"></td>
+                </thead>
+                <tbody id="result">
+                    <tr >
+                        <td class="tdhead">Name: </td>
+                        <td id="PatName" class = "retrieved"></td>
+                    </tr>
+                    <tr >
+                        <td class="tdhead">D.O.B.: </td>
+                        <td id="PatDOB" class = "retrieved"></td>
+                    </tr>
+                    <tr >
+                        <td class="tdhead">Gender: </td>
+                        <td id="PatGender" class = "retrieved"></td>
+                    </tr>
+                    <tr >
+                        <td class="tdhead">Address: </td>
+                        <td id="PatAddress" class = "retrieved"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="SearchAction" class="button">Search</button>
         </div>
     </main>
     <footer id="footer-content">
@@ -52,5 +77,6 @@
     </footer>
     <script src="scripts/xml2json.js" ></script>
     <script src="scripts/AMDLogIn.js" ></script>
+    <script src="scripts/AMDPatientPull.js" ></script>
 </body>
 </html>

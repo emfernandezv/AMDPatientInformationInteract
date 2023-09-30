@@ -8,18 +8,19 @@ var redirectURL = '';
 
 
 function LogIn(){
-  var username = "PPMD_EDUARDO";//document.getElementById('username').value;
-  var password = "45896123eE";//document.getElementById('password').value;
-  var officekey = 241017;//document.getElementById('officekey').value;
+  var username = document.getElementById('username').value;
+  var password = document.getElementById('password').value;
+  var officekey = document.getElementById('officekey').value;
   var appname = "TEMP";
   
  // ApiConnect1(username,password,officekey,appname);
  // console.log(redirectURL)
-  redirectURL = 'https://api-241.devtest.advancedmd.com/practicemanager/xmlrpc/processrequest.aspx';
+  redirectURL = 'https://api-233.devtest.advancedmd.com/practicemanager/xmlrpc/processrequest.aspx';
   ApiConnect2(username,password,officekey,appname);
 };
 
-
+//Accordig to the documentation it's needed to have a redirect method obtained from first base URL
+//from there we need to get the webserver attribute and use it to build a 2nd URL
 async function ApiConnect1(user,pass,ok,app){
   var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -39,12 +40,13 @@ async function ApiConnect1(user,pass,ok,app){
 
     var text = xml.text();
 }
-
+//to create the redirect URL from the response
 function RedirectURL(resultJson){
   redirectURL = resultJson.PPMDResults.Results.usercontext["@attributes"].webserver+'/xmlrpc/processrequest.aspx'; 
 }
 
-async function ApiConnect2(user,pass,ok,app){
+//to execute the 2nd log in attempt with the redirection URL
+function ApiConnect2(user,pass,ok,app){
   //console.log(redirectURL)
   var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -62,10 +64,11 @@ async function ApiConnect2(user,pass,ok,app){
       .catch(error => console.log('error', error));
 
 }
-
+//To get and store the token and redirection URL
 function GetToken(resultJson){
   token = resultJson.PPMDResults.Results.usercontext["#text"];
   localStorage.setItem('token', token);
+  localStorage.setItem('ApiURL',redirectURL);
   hide();
 }
 
@@ -73,11 +76,7 @@ function GetToken(resultJson){
 function hide(){
   window.alert("You have successfully Logged In.");
   document.getElementById('Login-section').style.display = 'none';
-}
-
-//function to wait based on ms
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  document.getElementById('PatientData-section').style.display = 'grid';
 }
 
 //listener to the loginaction button click

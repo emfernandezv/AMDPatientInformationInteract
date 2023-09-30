@@ -4,8 +4,8 @@ body {
     padding: 2em;
     font-size: 2em;
     text-align: center;
-  }
-
+    font-family: Arial, Helvetica, sans-serif;
+}
   main{
     display: grid;
     grid-template-columns: auto;
@@ -54,9 +54,30 @@ body {
 
 /*PATIENT DATA*/
 #PatientData-section{
-    display: grid;
+    display: none;
     grid-column: 1/1;
     grid-row: 2/2;
     border: 3px dashed black;
     height: 10em;
+}
+#searchField {
+    font-size: 0.8em;
+}
+.tdhead{
+    width: 3em;
+}
+#demographics-table{
+    padding-bottom: 0.5em;
+}
+#SearchAction {
+   padding: 1em;
+   font-size: 0.8em;
+}
+
+#result {
+    display: none;
+}
+
+.retrieved{
+    text-align: right;
 }
