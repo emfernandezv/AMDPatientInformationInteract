@@ -3,6 +3,7 @@ JavaScript Integration to pull Patient Demographics using AMD API.
 This application will allow the user to search for patient demographics from the AdvancedMD Development Environment.
 The credentials used needs to work along with the AdvancedMD VPN since it's not published on production.
 
+https://youtu.be/R9AfUAYlPoY
 
 #Development Environment
 
